@@ -1,5 +1,6 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
+using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -36,9 +37,15 @@ namespace DexpensAutoTests
             popup.Click();
             btnLoginFirst.Click();
             Thread.Sleep(800);
+            //txtUserName = new WebDriverWait(PropertiesCollection.driver, TimeSpan.FromSeconds(10)).Until(ExpectedConditions.ElementIsVisible(txtUserName.GetAttribute("Id"));
             txtUserName.SendKeys(username);
             txtPassword.SendKeys(password);
+            UserLoginClick();
+        }
+        public void UserLoginClick()
+        {
             btnLogin.Click();
         }
+
     }
 }
